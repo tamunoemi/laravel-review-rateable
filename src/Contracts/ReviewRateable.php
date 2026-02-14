@@ -13,107 +13,118 @@ interface ReviewRateable
 
     /**
      *
-     * @param $round
-     * @return double
+     * @param int|null $round
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function averageRating($round = null);
+    public function averageRating(?int $round = null, bool $onlyApproved = false);
 
     /**
      *
-     * @param $round
-     * @return double
+     * @param int|null $round
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function averageCustomerServiceRating($round = null);
+    public function averageCustomerServiceRating(?int $round = null, bool $onlyApproved = false);
 
     /**
      *
-     * @param $round
-     * @return double
+     * @param int|null $round
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function averageQualityRating($round = null);
+    public function averageQualityRating(?int $round = null, bool $onlyApproved = false);
 
     /**
      *
-     * @param $round
-     * @return double
+     * @param int|null $round
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function averageFriendlyRating($round = null);
+    public function averageFriendlyRating(?int $round = null, bool $onlyApproved = false);
 
     /**
      *
-     * @param $round
-     * @return double
+     * @param int|null $round
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function averagePricingRating($round = null);
+    public function averagePricingRating(?int $round = null, bool $onlyApproved = false);
 
     /**
      *
+     * @param bool $onlyApproved
      * @return int
      */
-    public function countRating();
+    public function countRating(bool $onlyApproved = false);
 
     /**
      *
+     * @param bool $onlyApproved
      * @return int
      */
-    public function countCustomerServiceRating();
+    public function countCustomerServiceRating(bool $onlyApproved = false);
 
     /**
      *
+     * @param bool $onlyApproved
      * @return int
      */
-    public function countQualityRating();
+    public function countQualityRating(bool $onlyApproved = false);
 
     /**
      *
+     * @param bool $onlyApproved
      * @return int
      */
-    public function countFriendlyRating();
+    public function countFriendlyRating(bool $onlyApproved = false);
 
     /**
      *
+     * @param bool $onlyApproved
      * @return int
      */
-    public function countPriceRating();
+    public function countPriceRating(bool $onlyApproved = false);
 
     /**
      *
-     * @return double
+     * @param bool $onlyApproved
+     * @return float
      */
-    public function sumRating();
+    public function sumRating(bool $onlyApproved = false);
 
     /**
      *
-     * @param $max
+     * @param int $max
      *
-     * @return double
+     * @return float
      */
     public function ratingPercent($max = 5);
 
     /**
      *
-     * @param $data
-     * @param $author
-     * @param $parent
+     * @param mixed $data
+     * @param Model $author
+     * @param Model|null $parent
      *
      * @return static
      */
-    public function rating($data, Model $author, Model $parent = null);
+    public function rating($data, Model $author, ?Model $parent = null);
 
     /**
      *
-     * @param $id
-     * @param $data
-     * @param $parent
+     * @param mixed $id
+     * @param mixed $data
+     * @param Model|null $parent
      *
      * @return mixed
      */
-    public function updateRating($id, $data, Model $parent = null);
+    public function updateRating($id, $data, ?Model $parent = null);
 
     /**
      *
-     * @param $id
-     * @param $sort
+     * @param mixed $id
+     * @param string $sort
      *
      * @return mixed
      */
@@ -121,8 +132,8 @@ interface ReviewRateable
 
     /**
      *
-     * @param $id
-     * @param $sort
+     * @param mixed $id
+     * @param string $sort
      *
      * @return mixed
      */
@@ -130,37 +141,37 @@ interface ReviewRateable
 
     /**
      *
-     * @param $id
-     * @param $sort
+     * @param mixed $id
+     * @param string $sort
      *
      * @return mixed
      */
     public function getNotApprovedRatings($id, $sort = 'desc');
 
     /**
-     * @param $id
-     * @param $limit
-     * @param $sort
+     * @param mixed $id
+     * @param int $limit
+     * @param string $sort
      *
      * @return mixed
      */
     public function getRecentRatings($id, $limit = 5, $sort = 'desc');
 
     /**
-     * @param $id
-     * @param $limit
-     * @param $approved
-     * @param $sort
+     * @param mixed $id
+     * @param int $limit
+     * @param bool $approved
+     * @param string $sort
      *
      * @return mixed
      */
     public function getRecentUserRatings($id, $limit = 5, $approved = true, $sort = 'desc');
 
     /**
-     * @param $rating
-     * @para $type
-     * @param $approved
-     * @param $sort
+     * @param mixed $rating
+     * @param string $type
+     * @param bool $approved
+     * @param string $sort
      *
      * @return mixed
      */
@@ -168,7 +179,7 @@ interface ReviewRateable
 
     /**
      *
-     * @param $id
+     * @param mixed $id
      *
      * @return mixed
      */
@@ -176,7 +187,9 @@ interface ReviewRateable
 
     /**
      *
-     * @param $id
+     * @param mixed $id
+     * @param mixed $author
+     * @param string $sort
      * @return mixed
      */
     public function getUserRatings($id, $author, $sort = 'desc');

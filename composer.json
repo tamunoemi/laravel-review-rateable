@@ -1,6 +1,6 @@
 {
     "name": "tamunoemi/laravel-review-rateable",
-    "description": "Review & Rating system for Laravel 10,11,12",
+    "description": "Review & Rating system to support Laravel 10,11,12 forked from https://github.com/codebyray/laravel-review-rateable",
     "keywords": ["rating", "Ratable", "laravel", "Review-Rateable", "reviewable"],
     "license": "MIT",
     "authors": [
