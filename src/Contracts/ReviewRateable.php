@@ -155,7 +155,7 @@ interface ReviewRateable
      *
      * @return mixed
      */
-    public function getRecentRatings($id, $limit = 5, $sort = 'desc');
+    public function getRecentRatings($id, $limit = 5, string $sort = 'desc');
 
     /**
      * @param mixed $id
@@ -165,7 +165,7 @@ interface ReviewRateable
      *
      * @return mixed
      */
-    public function getRecentUserRatings($id, $limit = 5, $approved = true, $sort = 'desc');
+    public function getRecentUserRatings($id, $limit = 5, $approved = true, string $sort = 'desc');
 
     /**
      * @param mixed $rating
@@ -175,7 +175,7 @@ interface ReviewRateable
      *
      * @return mixed
      */
-    public function getCollectionByAverageRating($rating, $type = 'rating', $approved = true, $sort = 'desc');
+    public function getCollectionByAverageRating($rating, $type = 'rating', $approved = true, string $sort = 'desc');
 
     /**
      *
@@ -192,5 +192,5 @@ interface ReviewRateable
      * @param string $sort
      * @return mixed
      */
-    public function getUserRatings($id, $author, $sort = 'desc');
+    public function getUserRatings($id, $author, string $sort = 'desc');
 }
