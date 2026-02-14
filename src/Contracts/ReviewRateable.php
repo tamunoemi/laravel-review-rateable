@@ -128,7 +128,7 @@ interface ReviewRateable
      *
      * @return mixed
      */
-    public function getAllRatings($id, $sort = 'desc');
+    public function getAllRatings($id, string $sort = 'desc');
 
     /**
      *
