@@ -146,7 +146,7 @@ interface ReviewRateable
      *
      * @return mixed
      */
-    public function getNotApprovedRatings($id, $sort = 'desc');
+    public function getNotApprovedRatings($id, string $sort = 'desc');
 
     /**
      * @param mixed $id
