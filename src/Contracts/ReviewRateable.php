@@ -99,8 +99,8 @@ interface ReviewRateable
      *
      * @return float
      */
-    public function ratingPercent($max = 5);
-
+    public function ratingPercent(int $max = 5);
+ 
     /**
      *
      * @param mixed $data
